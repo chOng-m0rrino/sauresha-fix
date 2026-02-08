@@ -1,6 +1,6 @@
 # SauresHA fix
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/chOng-m0rrino/sauresha-fix)](https://github.com/volshebniks/chOng-m0rrino/releases)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/chOng-m0rrino/sauresha-fix)](https://github.com/chOng-m0rrino/releases)
 ![GitHub Release Date](https://img.shields.io/github/release-date/chOng-m0rrino/sauresha-fix)
 [![GitHub](https://img.shields.io/github/license/chOng-m0rrino/sauresha-fix)](LICENSE)
 
