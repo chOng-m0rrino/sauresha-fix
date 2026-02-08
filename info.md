@@ -55,8 +55,6 @@
   * [Ручная установка](#ручная-установка)
   * [Установка через HACS](#hacs_установка)
 
-
-
 Для связи: <master@g-s-a.me>
 
 Интеграция котроллеров [Saures](https://www.saures.ru) c [Home Assistant](https://www.home-assistant.io/)
