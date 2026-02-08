@@ -1,35 +1,18 @@
-# SauresHA
+# SauresHA fix
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/volshebniks/sauresha)](https://github.com/volshebniks/sauresha/releases)
-![GitHub Release Date](https://img.shields.io/github/release-date/volshebniks/sauresha)
-[![GitHub](https://img.shields.io/github/license/volshebniks/sauresha)](LICENSE)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/chOng-m0rrino/sauresha-fix)](https://github.com/volshebniks/chOng-m0rrino/releases)
+![GitHub Release Date](https://img.shields.io/github/release-date/chOng-m0rrino/sauresha-fix)
+[![GitHub](https://img.shields.io/github/license/chOng-m0rrino/sauresha-fix)](LICENSE)
 
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-Yes-brightgreen.svg)](https://github.com/volshebniks/sauresha/graphs/commit-activity)
-[![GitHub issues](https://img.shields.io/github/issues/volshebniks/sauresha)](https://github.com/volshebniks/sauresha/issues)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-Yes-brightgreen.svg)](https://github.com/chOng-m0rrino/sauresha-fix/graphs/commit-activity)
+[![GitHub issues](https://img.shields.io/github/issues/chOng-m0rrino/sauresha-fix)](https://github.com/chOng-m0rrino/sauresha-fix/issues)
 
-[![Donate](https://img.shields.io/badge/donate-Coffee-yellow.svg)](https://https://www.buymeacoffee.com/RlnBV9r)
-[![Donate](https://img.shields.io/badge/donate-Yandex-red.svg)](https://money.yandex.ru/to/41001566881198)
 
-Пожертвование на развитие проекта  [Яндекс.Деньги](https://money.yandex.ru/to/41001566881198)
+## Update:
+   <br />1. Fix [Errno 104] Connection reset by peer
+   <br />2. Fix binary sensors state values
+   <br />3. Add Controller name detection - add support for R2 4.5, add default value for unknown revisions
 
-## Update 1: Начиная с версии 0.3:
- * сделан переход на новое клиентское API
- * добавлена необязательная настройка для sensor - scan_interval. Время обновления в минутах. По умолчанию = 10 минут.
- * из-за перехода появились новые атрибуты у сенсоров.
-
-## Update 2: версия 0.3.5:
- * уменьшено количество вызово API
- * ускорена первоначальная инициализация модуля
- * сделан переход на асинхронные методы
- * исправлена ошибка с заднием своего scan_interval
- * исправлена ошибка связанная с наличием русских букв в серийных номерах
- * на стороне Saures явно починили кеширование для нового API
-
-## Update 3: версия 0.3.8:
- * вернул синхронные вызовы
-
-## Update 4: Начиная с версии 0.5:
- * Существенно сокращено кол-во обращений к серверу Saures, для предотвращения блокировки.
    <br />Рекомендую в настройках указать:
 ```yaml
   scan_interval:
@@ -37,27 +20,12 @@
 ```
    Иначе могут быть блокировки в будущем.
 
-## Update 5: Начиная с версии 0.6:
- * значительно изменен механизм настройки
- * можно задавать свои мена для всего
- * можно в настройках делать ссылки на !secret
- * добавил в manifest, version
-
-## Update 6: Начиная с версии 1.0:
- * полностью переработан код для минимизации обращений к серверу Saures
- * внедрен асинхронный режим работы
- * Добавлено управление кранами
- * настройка через GUI
 
 ## Содержание
 
 * [Установка](#устнановка)
   * [Ручная установка](#ручная-установка)
   * [Установка через HACS](#hacs_установка)
-
-
-
-Для связи: <master@g-s-a.me>
 
 Интеграция котроллеров [Saures](https://www.saures.ru) c [Home Assistant](https://www.home-assistant.io/)
 # Описание
@@ -88,25 +56,8 @@
 
 1. Убедитесь, что [HACS](https://custom-components.github.io/hacs/) уже устновлен.
 2. Перейдите на закладку SETTINGS
-3. Введите https://github.com/volshebniks/sauresha   и выберите категорию Integration, нажмите Сохранить
+3. Введите https://github.com/chOng-m0rrino/sauresha-fix   и выберите категорию Integration, нажмите Сохранить
 4. Новый репозиторий Integration Saures controllers with HA будет добавлен на закладке Integration
 5. Устновите SauresHA из него
 3. Осуществляем конфигурацию компонента в Home Assistant через GUI.
 4. Перезапустите HA.
-
-# План развития проекта
-- [X] Добавить проект в HACS
-- [ ] Сделать сенсоры для счетчиков с показаниями за день/месяц/год
-- [X] Добавить управление кранами
-- [ ] Сделать pallete для Node-Red
-- [X] Сделать полноценную интеграцию с Home Assistant (добавляется в раздел интеграции)
-
-
-# Credits
-
-Большое спасибо следующим организациям и проектам, работа которых имеет важное значение для развития проекта:
-
-Нет их пока :)
-
-----------------------------------------------------------------------------------------------------------------------------------
-Пожертвование на развитие проекта  [Яндекс.Деньги](https://money.yandex.ru/to/41001566881198)
