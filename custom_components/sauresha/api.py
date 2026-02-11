@@ -129,7 +129,12 @@ class SauresHA:
                         raise Exception(f"HTTP {flats_data.status}: {await flats_data.text()}")
                     
                     result = await flats_data.json()
-                    result_data = result["data"]["objects"]
+                    data = result.get("data", {})
+                    
+                    if isinstance(data, dict):
+                        result_data = data.get("objects") or data.get("list") or []
+                    else:
+                        result_data = []
                     
                     for val in result_data:
                         flat_id = val.get("id")
@@ -161,6 +166,8 @@ class SauresHA:
             return "контроллер R1 8 (2017-2018)"
         elif version_id == "3.5":
             return "контроллер R1 4 (после 2018)"
+        elif version_id == "3.6":
+            return "контроллер R1 4 (после 2024)"
         elif version_id == "4.0":
             return "контроллер R2 (4.0) 8 аналоговых каналов"
         elif version_id == "4.5":
