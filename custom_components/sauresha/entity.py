@@ -70,6 +70,15 @@ class SauresSensor(Entity):
         async_track_time_interval(hass, refresh, scan_interval)
 
     @property
+    def device_info(self) -> DeviceInfo:
+        """Link to main controller."""
+        return DeviceInfo(
+            identifiers={
+                (DOMAIN, f"sauresha_contr_{self.flat_id}")
+            },
+        )
+
+    @property
     def unique_id(self):
         """Return a unique ID to use for this sensor."""
         return f"sauresha_{self.flat_id}_{self.meter_id}"
@@ -237,6 +246,15 @@ class SauresBinarySensor(Entity):
         return self.controller.get_binarysensor(self.flat_id, self.meter_id)
 
     @property
+    def device_info(self) -> DeviceInfo:
+        """Link to main controller."""
+        return DeviceInfo(
+            identifiers={
+                (DOMAIN, f"sauresha_contr_{self.flat_id}")
+            },
+        )
+
+    @property
     def unique_id(self):
         """Return a unique ID to use for this sensor."""
         return f"sauresha_{self.flat_id}_{self.meter_id}"
@@ -383,17 +401,12 @@ class SauresControllerSensor(Entity):
         my_controller = self.current_controller_info
         info = DeviceInfo(
             identifiers={
-                # Serial numbers are unique identifiers within a specific domain
-                (DOMAIN, self.unique_id)
+                (DOMAIN, f"sauresha_contr_{self.flat_id}")
             },
             name=self.name,
             manufacturer="SAURES",
             model=self.controller.get_controller_name(my_controller.hardware),
             sw_version=my_controller.firmware,
-            via_device=(
-                DOMAIN,
-                f"[{self.controller.get_controller_name(my_controller.hardware)}]:[{self.serial_number}]",
-            ),
         )
 
         return info
@@ -524,6 +537,15 @@ class SauresSwitch(SwitchEntity):
     @property
     def current_meter(self):
         return self.controller.get_switch(self.flat_id, self.meter_id)
+
+    @property
+    def device_info(self) -> DeviceInfo:
+        """Link to main controller."""
+        return DeviceInfo(
+            identifiers={
+                (DOMAIN, f"sauresha_contr_{self.flat_id}")
+            },
+        )
 
     @property
     def unique_id(self):
