@@ -390,10 +390,6 @@ class SauresControllerSensor(Entity):
             manufacturer="SAURES",
             model=self.controller.get_controller_name(my_controller.hardware),
             sw_version=my_controller.firmware,
-            via_device=(
-                DOMAIN,
-                f"[{self.controller.get_controller_name(my_controller.hardware)}]:[{self.serial_number}]",
-            ),
         )
 
         return info
